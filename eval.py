@@ -28,6 +28,7 @@ IMAGE_CATEGORIES = [
     "Others",
 ]
 
+
 def check_correctness(sample, generation, timeout, debug=True):
     """Check correctness of code generation with a global timeout.
     The global timeout is to catch some extreme/rare cases not handled by the timeouts
@@ -148,30 +149,8 @@ def compute_metrics(results, problems, k_list=[1, 10, 100], details=True):
         detail_metrics = {k:dict(zip(task_ids, v)) for k, v in detail_pass_at_k.items()}
         result_dict["detail"] = detail_metrics
 
-    # Results per image category
-
-    # WARNING: The following code only works when k=1.
-    # Test accuracies
-    # Image categories
-    # image_type_task_acc_dict = defaultdict(lambda: [0, 0])  # Correct, Total
-    # image_type_test_acc_dict = defaultdict(lambda: [0, 0])  # Correct, Total
-
-    # for task_id in results.keys():
-    #     problem = problems[task_id]
-    #     image_tags = set(problem["image_tags"])
-    #     for image_tag in image_tags:
-    #         image_type_task_acc_dict[image_tag][0] += correct_by_task[task_id]
-    #         image_type_task_acc_dict[image_tag][1] += total_by_task[task_id]
-    #         image_type_test_acc_dict[image_tag][0] += result_dict["test_acc_detail"][task_id]
-    #         image_type_test_acc_dict[image_tag][1] += 1
-    
-    # for image_tag in image_type_task_acc_dict.keys():
-    #     task_stats = image_type_task_acc_dict[image_tag]
-    #     task_stats.append(task_stats[0] / task_stats[1])
-
-    # result_dict["image_category_task_acc"] = dict(image_type_task_acc_dict)
-
     return result_dict
+
 
 def parse_args():
     # Create the parser
@@ -195,6 +174,7 @@ def parse_args():
     args.data_split = args.data_split.split(',')
     args.image_categories = args.image_categories.split(',') if args.image_categories else None
     return args
+
 
 def main(args):
     # Load parameters
@@ -223,6 +203,7 @@ def main(args):
         metrics["categories"][image_category] = image_category_metrics
 
     json.dump(metrics, open(os.path.join(os.path.dirname(args.generation_file), f'results_{gen_file_basename}.json'), 'w'), indent=4)
+
 
 if __name__ == "__main__":
     args = parse_args()

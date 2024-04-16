@@ -31,11 +31,14 @@ python eval.py \
 ```
 
 # Citation
+Please cite our work if you find it useful:
 ```plain
-@misc{li2024MMCode,
-  author = {Kaixin, Li and Yuchen, Tian and Qisheng, Hu and Ziyang, Luo and Jing, Ma},
-  title = {MMCode: Evaluating Multi-Modal Code Language Models with Visually Rich Programming Problems},
-  year = {2024},
-  howpublished = {\url{https://github.com/Happylkx/MMCode}},
+@misc{li2024mmcode,
+      title={MMCode: Evaluating Multi-Modal Code Large Language Models with Visually Rich Programming Problems}, 
+      author={Kaixin Li and Yuchen Tian and Qisheng Hu and Ziyang Luo and Jing Ma},
+      year={2024},
+      eprint={2404.09486},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 }
 ```
