@@ -1,19 +1,28 @@
 # MMCode: Evaluating Multi-Modal Code Large Language Models with Visually Rich Programming Problems
-<div style="text-align: center; font-size:14pt">
-    <a href="#">Paper</a> | 
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg?style=flat-square)
+[![Research Paper](https://img.shields.io/badge/Paper-brightgreen.svg?style=flat-square)](https://arxiv.org/abs/2404.09486)
+[![Huggingface Dataset](https://img.shields.io/badge/Dataset-blue.svg?style=flat-square)](https://huggingface.co/datasets/likaixin/MMCode)
+<!-- <div style="text-align: center; font-size:14pt">
+    <a href="https://arxiv.org/abs/2404.09486">Paper</a> | 
     <a href="https://huggingface.co/datasets/likaixin/MMCode">Huggingface Dataset</a>
-</div>
+</div> -->
 
 ## Dataset Description
 MMCode is a multi-modal code generation dataset designed to evaluate the problem-solving skills of code language models in visually rich contexts. 
 It contains 3,548 questions paired with 6,622 images, derived from real-world programming challenges across 10 code competition websites, with Python solutions and tests provided. 
 The dataset emphasizes the extreme demand for reasoning abilities, the interwoven nature of textual and visual contents, and the occurrence of questions containing multiple images.
 
-**For more detailed introduction of the data, please see the [🤗Huggingface Dataset Page](https://huggingface.co/datasets/likaixin/MMCode).**
-# Usage
-## Inference
-Please configure API keys before running the models. They can be set in environment variables `OPENAI_API_KEY` and `GOOGLE_API_KEY`.
+**For more detailed introduction of the data, please see the [🤗 Huggingface Dataset](https://huggingface.co/datasets/likaixin/MMCode).**
+# Getting Started
 
+## Set Up
+
+Before you begin, ensure your environment variables are set:
+
+- `OPENAI_API_KEY`: Your OpenAI API key.
+- `GOOGLE_API_KEY`: Your Google API key.
+
+## Inference
 An example for GPT-4V generation:
 ```python
 python generate.py \
@@ -31,7 +40,7 @@ python eval.py \
 ```
 
 # Citation
-Please cite our work if you find it useful:
+Please consider citing if you find our work useful:
 ```plain
 @misc{li2024mmcode,
       title={MMCode: Evaluating Multi-Modal Code Large Language Models with Visually Rich Programming Problems}, 
