@@ -166,7 +166,7 @@ def compute_metrics(results, problems, k_list=[1, 5, 10]):
     for image_tag in tasks_by_image_category.keys():
         task_ids = tasks_by_image_category[image_tag]
         result_dict = compute_metrics_single({task_id: results[task_id] for task_id in task_ids}, k_list=k_list)
-        all_result_dict[image_tag] = result_dict
+        categories_result_dict[image_tag] = result_dict
 
     final_result_dict = {
         'all': all_result_dict,
